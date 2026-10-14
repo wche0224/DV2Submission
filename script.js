@@ -47,3 +47,9 @@ renderChart(
   "chart-ranking",
   "charts/character_ranking.json"
 );
+
+// Map 1: World Publisher Choropleth
+renderChart(
+  "map-publishers",
+  "charts/publisher_choropleth.json"
+);

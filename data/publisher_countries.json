@@ -1,0 +1,147 @@
+[
+  {
+    "iso_numeric": 840,
+    "country": "United States",
+    "publishers": 164
+  },
+  {
+    "iso_numeric": 826,
+    "country": "United Kingdom",
+    "publishers": 19
+  },
+  {
+    "iso_numeric": 250,
+    "country": "France",
+    "publishers": 17
+  },
+  {
+    "iso_numeric": 276,
+    "country": "Germany",
+    "publishers": 17
+  },
+  {
+    "iso_numeric": 124,
+    "country": "Canada",
+    "publishers": 11
+  },
+  {
+    "iso_numeric": 380,
+    "country": "Italy",
+    "publishers": 7
+  },
+  {
+    "iso_numeric": 392,
+    "country": "Japan",
+    "publishers": 5
+  },
+  {
+    "iso_numeric": 56,
+    "country": "Belgium",
+    "publishers": 4
+  },
+  {
+    "iso_numeric": 616,
+    "country": "Poland",
+    "publishers": 4
+  },
+  {
+    "iso_numeric": 484,
+    "country": "Mexico",
+    "publishers": 4
+  },
+  {
+    "iso_numeric": 724,
+    "country": "Spain",
+    "publishers": 3
+  },
+  {
+    "iso_numeric": 752,
+    "country": "Sweden",
+    "publishers": 2
+  },
+  {
+    "iso_numeric": 158,
+    "country": "Taiwan",
+    "publishers": 2
+  },
+  {
+    "iso_numeric": 554,
+    "country": "New Zealand",
+    "publishers": 2
+  },
+  {
+    "iso_numeric": 76,
+    "country": "Brazil",
+    "publishers": 2
+  },
+  {
+    "iso_numeric": 278,
+    "country": "East Germany",
+    "publishers": 2
+  },
+  {
+    "iso_numeric": 578,
+    "country": "Norway",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 442,
+    "country": "Luxembourg",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 458,
+    "country": "Malaysia",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 360,
+    "country": "Indonesia",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 203,
+    "country": "Czech Republic",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 372,
+    "country": "Ireland",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 492,
+    "country": "Monaco",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 192,
+    "country": "Cuba",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 246,
+    "country": "Finland",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 756,
+    "country": "Switzerland",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 642,
+    "country": "Romania",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 348,
+    "country": "Hungary",
+    "publishers": 1
+  },
+  {
+    "iso_numeric": 705,
+    "country": "Slovenia",
+    "publishers": 1
+  }
+]

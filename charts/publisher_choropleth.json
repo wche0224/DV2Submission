@@ -1,0 +1,83 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Are Comic Publishers Recorded?",
+    "subtitle": "Publishers identified through Wikidata and the Grand Comics Database",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 360,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "data": {
+    "url": "https://cdn.jsdelivr.net/npm/vega-datasets@3/data/world-110m.json",
+    "format": {
+      "type": "topojson",
+      "feature": "countries"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.id)",
+      "as": "iso_numeric"
+    },
+    {
+      "lookup": "iso_numeric",
+      "from": {
+        "data": {
+          "url": "data/publisher_countries.json"
+        },
+        "key": "iso_numeric",
+        "fields": [
+          "country",
+          "publishers"
+        ]
+      }
+    },
+    {
+      "calculate": "isValid(datum.country) ? datum.country : 'No matching record'",
+      "as": "country_name"
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "isValid(datum.publishers)",
+        "field": "publishers",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "blues"
+        },
+        "legend": {
+          "title": "Publisher Records"
+        }
+      },
+      "value": "#E5E7EB"
+    },
+    "tooltip": [
+      {
+        "field": "country_name",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "publishers",
+        "type": "quantitative",
+        "title": "Publisher Records"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
