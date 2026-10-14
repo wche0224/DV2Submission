@@ -1,0 +1,83 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Are Comic Publishers Headquartered?",
+    "subtitle": "Recorded publisher headquarters locations in Wikidata",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 400,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@3/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E8EDF2",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/publisher_locations.json"
+      },
+      "mark": {
+        "type": "circle",
+        "color": "#D32F2F",
+        "opacity": 0.7,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "publishers",
+          "type": "quantitative",
+          "title": "Publisher Records",
+          "scale": {
+            "type": "sqrt",
+            "range": [80, 1800]
+          },
+          "legend": {
+            "title": "Publishers per Location"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "city",
+            "type": "nominal",
+            "title": "Headquarters Location"
+          },
+          {
+            "field": "publishers",
+            "type": "quantitative",
+            "title": "Publisher Records"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

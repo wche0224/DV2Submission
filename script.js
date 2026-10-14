@@ -53,3 +53,10 @@ renderChart(
   "map-publishers",
   "charts/publisher_choropleth.json"
 );
+
+
+// Map 2: Publisher Headquarters
+renderChart(
+  "map-publisher-symbols",
+  "charts/publisher_symbols.json"
+);
