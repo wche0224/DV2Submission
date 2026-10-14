@@ -1,0 +1,91 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "The Rise of Heroes and Villains",
+    "subtitle": "Character debuts by alignment, 1930–2014",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 320,
+  "data": {
+    "url": "data/alignment_by_decade.json"
+  },
+  "params": [
+    {
+      "name": "streamPublisher",
+      "value": "Marvel",
+      "bind": {
+        "input": "select",
+        "options": ["Marvel", "DC"],
+        "name": "Publisher: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.publisher === streamPublisher"
+    },
+    {
+      "filter": "indexof(['Good', 'Bad', 'Neutral'], datum.alignment) >= 0"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "opacity": 0.9
+  },
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "ordinal",
+      "sort": "ascending",
+      "title": "First Appearance Decade",
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "characters",
+      "aggregate": "sum",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "alignment",
+      "type": "nominal",
+      "title": "Alignment",
+      "scale": {
+        "domain": ["Good", "Bad", "Neutral"],
+        "range": ["#219E78", "#DC3545", "#78909C"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "decade",
+        "title": "Decade"
+      },
+      {
+        "field": "alignment",
+        "title": "Alignment"
+      },
+      {
+        "aggregate": "sum",
+        "field": "characters",
+        "type": "quantitative",
+        "title": "Character Debuts"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

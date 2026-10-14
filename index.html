@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Comic Book Collections</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+
+    <header>
+      <h1>Comic Book Collections</h1>
+      <p>
+        Exploring decades of Marvel and DC
+        character history.
+      </p>
+    </header>
+
+    <section>
+      <h2>How Have Character Debuts Changed?</h2>
+      <p>
+        Compare recorded character debuts
+        between Marvel and DC across decades.
+      </p>
+
+      <div id="chart-debuts" class="chart"></div>
+    </section>
+
+    <section>
+      <h2>Heroes and Villains Through Time</h2>
+      <p>
+        Explore the changing proportions of
+        recorded character alignments.
+        Use the dropdown to switch publishers.
+      </p>
+
+      <div id="chart-alignment" class="chart"></div>
+    </section>
+
+    
+<!-- Chart 3: Alignment Streamgraph -->
+<section>
+  <h2>The Rise of Heroes and Villains</h2>
+
+  <p>
+    How has the balance of heroes, villains
+    and neutral characters evolved over time?
+    This streamgraph shows recorded character
+    debuts across different decades.
+  </p>
+
+  <div
+    id="chart-streamgraph"
+    class="chart">
+  </div>
+
+  <p class="chart-note">
+    Source: FiveThirtyEight Comic Characters
+    (historical 2014 dataset).
+    Excludes unknown and other alignments.
+  </p>
+</section>
+
+<!-- Chart 4: Character Ranking -->
+<section>
+  <h2>The Characters Who Dominate Comic Pages</h2>
+
+  <p>
+    Some characters appear far more frequently
+    than others. Compare the leading characters
+    recorded in Marvel and DC's historical data.
+  </p>
+
+  <div
+    id="chart-ranking"
+    class="chart">
+  </div>
+
+  <p class="chart-note">
+    Appearance counts reflect the historical
+    source dataset, not current totals.
+  </p>
+</section>
+
+
+  </main>
+</body  >
+</html>

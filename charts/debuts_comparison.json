@@ -1,0 +1,114 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Marvel vs DC: Character Debuts",
+    "subtitle": "Recorded character entries by first-appearance decade",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 360,
+  "data": {
+    "url": "data/debuts_by_decade.json"
+  },
+  "transform": [
+    {
+      "pivot": "publisher",
+      "value": "characters",
+      "groupby": ["decade"],
+      "op": "sum"
+    },
+    {
+      "filter": "isValid(datum.Marvel) && isValid(datum.DC)"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#AAAAAA"
+      },
+      "encoding": {
+        "y": {
+          "field": "decade",
+          "type": "ordinal",
+          "sort": "ascending",
+          "title": "Debut Decade"
+        },
+        "x": {
+          "field": "Marvel",
+          "type": "quantitative",
+          "title": "Number of Character Entries"
+        },
+        "x2": {
+          "field": "DC"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": ["Marvel", "DC"],
+          "as": ["publisher", "count"]
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130
+      },
+      "encoding": {
+        "y": {
+          "field": "decade",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Number of Character Entries"
+        },
+        "color": {
+          "field": "publisher",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Marvel", "DC"],
+            "range": ["#D32F2F", "#1976D2"]
+          },
+          "legend": {
+            "title": "Publisher",
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "decade",
+            "type": "ordinal",
+            "title": "Decade"
+          },
+          {
+            "field": "publisher",
+            "type": "nominal",
+            "title": "Publisher"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Character Entries"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

@@ -1,0 +1,440 @@
+[
+  {
+    "publisher": "DC",
+    "decade": 1930,
+    "alignment": "Bad",
+    "characters": 4
+  },
+  {
+    "publisher": "DC",
+    "decade": 1930,
+    "alignment": "Good",
+    "characters": 31
+  },
+  {
+    "publisher": "DC",
+    "decade": 1930,
+    "alignment": "Neutral",
+    "characters": 1
+  },
+  {
+    "publisher": "DC",
+    "decade": 1930,
+    "alignment": "Unknown",
+    "characters": 6
+  },
+  {
+    "publisher": "DC",
+    "decade": 1940,
+    "alignment": "Bad",
+    "characters": 76
+  },
+  {
+    "publisher": "DC",
+    "decade": 1940,
+    "alignment": "Good",
+    "characters": 139
+  },
+  {
+    "publisher": "DC",
+    "decade": 1940,
+    "alignment": "Neutral",
+    "characters": 20
+  },
+  {
+    "publisher": "DC",
+    "decade": 1940,
+    "alignment": "Unknown",
+    "characters": 33
+  },
+  {
+    "publisher": "DC",
+    "decade": 1950,
+    "alignment": "Bad",
+    "characters": 32
+  },
+  {
+    "publisher": "DC",
+    "decade": 1950,
+    "alignment": "Good",
+    "characters": 73
+  },
+  {
+    "publisher": "DC",
+    "decade": 1950,
+    "alignment": "Neutral",
+    "characters": 5
+  },
+  {
+    "publisher": "DC",
+    "decade": 1950,
+    "alignment": "Unknown",
+    "characters": 11
+  },
+  {
+    "publisher": "DC",
+    "decade": 1960,
+    "alignment": "Bad",
+    "characters": 178
+  },
+  {
+    "publisher": "DC",
+    "decade": 1960,
+    "alignment": "Good",
+    "characters": 196
+  },
+  {
+    "publisher": "DC",
+    "decade": 1960,
+    "alignment": "Neutral",
+    "characters": 29
+  },
+  {
+    "publisher": "DC",
+    "decade": 1960,
+    "alignment": "Unknown",
+    "characters": 50
+  },
+  {
+    "publisher": "DC",
+    "decade": 1970,
+    "alignment": "Bad",
+    "characters": 154
+  },
+  {
+    "publisher": "DC",
+    "decade": 1970,
+    "alignment": "Good",
+    "characters": 191
+  },
+  {
+    "publisher": "DC",
+    "decade": 1970,
+    "alignment": "Neutral",
+    "characters": 32
+  },
+  {
+    "publisher": "DC",
+    "decade": 1970,
+    "alignment": "Unknown",
+    "characters": 39
+  },
+  {
+    "publisher": "DC",
+    "decade": 1980,
+    "alignment": "Bad",
+    "characters": 619
+  },
+  {
+    "publisher": "DC",
+    "decade": 1980,
+    "alignment": "Good",
+    "characters": 725
+  },
+  {
+    "publisher": "DC",
+    "decade": 1980,
+    "alignment": "Neutral",
+    "characters": 150
+  },
+  {
+    "publisher": "DC",
+    "decade": 1980,
+    "alignment": "Unknown",
+    "characters": 127
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "alignment": "Bad",
+    "characters": 871
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "alignment": "Good",
+    "characters": 704
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "alignment": "Neutral",
+    "characters": 128
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "alignment": "Reformed Criminals",
+    "characters": 2
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "alignment": "Unknown",
+    "characters": 103
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "alignment": "Bad",
+    "characters": 752
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "alignment": "Good",
+    "characters": 601
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "alignment": "Neutral",
+    "characters": 153
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "alignment": "Reformed Criminals",
+    "characters": 1
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "alignment": "Unknown",
+    "characters": 151
+  },
+  {
+    "publisher": "DC",
+    "decade": 2010,
+    "alignment": "Bad",
+    "characters": 193
+  },
+  {
+    "publisher": "DC",
+    "decade": 2010,
+    "alignment": "Good",
+    "characters": 136
+  },
+  {
+    "publisher": "DC",
+    "decade": 2010,
+    "alignment": "Neutral",
+    "characters": 38
+  },
+  {
+    "publisher": "DC",
+    "decade": 2010,
+    "alignment": "Unknown",
+    "characters": 73
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1930,
+    "alignment": "Bad",
+    "characters": 31
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1930,
+    "alignment": "Good",
+    "characters": 21
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1930,
+    "alignment": "Neutral",
+    "characters": 17
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1940,
+    "alignment": "Bad",
+    "characters": 943
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1940,
+    "alignment": "Good",
+    "characters": 363
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1940,
+    "alignment": "Neutral",
+    "characters": 99
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1940,
+    "alignment": "Unknown",
+    "characters": 36
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1950,
+    "alignment": "Bad",
+    "characters": 126
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1950,
+    "alignment": "Good",
+    "characters": 130
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1950,
+    "alignment": "Neutral",
+    "characters": 37
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1950,
+    "alignment": "Unknown",
+    "characters": 9
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1960,
+    "alignment": "Bad",
+    "characters": 601
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1960,
+    "alignment": "Good",
+    "characters": 306
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1960,
+    "alignment": "Neutral",
+    "characters": 165
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1960,
+    "alignment": "Unknown",
+    "characters": 234
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1970,
+    "alignment": "Bad",
+    "characters": 879
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1970,
+    "alignment": "Good",
+    "characters": 618
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1970,
+    "alignment": "Neutral",
+    "characters": 284
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1970,
+    "alignment": "Unknown",
+    "characters": 453
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1980,
+    "alignment": "Bad",
+    "characters": 920
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1980,
+    "alignment": "Good",
+    "characters": 674
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1980,
+    "alignment": "Neutral",
+    "characters": 294
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1980,
+    "alignment": "Unknown",
+    "characters": 537
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1990,
+    "alignment": "Bad",
+    "characters": 1636
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1990,
+    "alignment": "Good",
+    "characters": 831
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1990,
+    "alignment": "Neutral",
+    "characters": 439
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1990,
+    "alignment": "Unknown",
+    "characters": 751
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2000,
+    "alignment": "Bad",
+    "characters": 928
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2000,
+    "alignment": "Good",
+    "characters": 1090
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2000,
+    "alignment": "Neutral",
+    "characters": 496
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2000,
+    "alignment": "Unknown",
+    "characters": 572
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2010,
+    "alignment": "Bad",
+    "characters": 386
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2010,
+    "alignment": "Good",
+    "characters": 333
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2010,
+    "alignment": "Neutral",
+    "characters": 242
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2010,
+    "alignment": "Unknown",
+    "characters": 80
+  }
+]

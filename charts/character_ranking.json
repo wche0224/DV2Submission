@@ -1,0 +1,133 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Who Dominates the Comic Pages?",
+    "subtitle": "Top 15 characters by recorded appearances",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": {
+    "step": 26
+  },
+  "data": {
+    "url": "data/top_characters.json"
+  },
+  "params": [
+    {
+      "name": "rankingPublisher",
+      "value": "Marvel",
+      "bind": {
+        "input": "select",
+        "options": ["Marvel", "DC"],
+        "name": "Publisher: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.publisher === rankingPublisher"
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "appearances",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 15"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "name",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "appearances",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "labelLimit": 220
+      }
+    },
+    "x": {
+      "field": "appearances",
+      "type": "quantitative",
+      "title": "Recorded Comic Appearances",
+      "scale": {
+        "zero": true
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#CCCCCC"
+      },
+      "encoding": {
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130
+      },
+      "encoding": {
+        "color": {
+          "field": "publisher",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Marvel", "DC"],
+            "range": ["#D32F2F", "#1976D2"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Character"
+          },
+          {
+            "field": "publisher",
+            "title": "Publisher"
+          },
+          {
+            "field": "appearances",
+            "title": "Appearances",
+            "format": ",d"
+          },
+          {
+            "field": "rank",
+            "title": "Rank"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

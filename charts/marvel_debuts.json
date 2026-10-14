@@ -1,0 +1,56 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Marvel Character Debuts by Decade",
+  "width": 600,
+  "height": 320,
+  "data": {
+    "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/comic-characters/marvel-wikia-data.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "Year": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "isValid(datum.Year) && datum.Year >= 1930 && datum.Year <= 2014"
+    },
+    {
+      "calculate": "floor(datum.Year / 10) * 10",
+      "as": "decade"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#C62828"
+  },
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "ordinal",
+      "title": "First Appearance Decade",
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Number of Character Entries"
+    },
+    "tooltip": [
+      {
+        "field": "decade",
+        "type": "ordinal",
+        "title": "Decade"
+      },
+      {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Characters"
+      }
+    ]
+  }
+}

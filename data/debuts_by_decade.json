@@ -1,0 +1,92 @@
+[
+  {
+    "publisher": "DC",
+    "decade": 1930,
+    "characters": 42
+  },
+  {
+    "publisher": "DC",
+    "decade": 1940,
+    "characters": 268
+  },
+  {
+    "publisher": "DC",
+    "decade": 1950,
+    "characters": 121
+  },
+  {
+    "publisher": "DC",
+    "decade": 1960,
+    "characters": 453
+  },
+  {
+    "publisher": "DC",
+    "decade": 1970,
+    "characters": 416
+  },
+  {
+    "publisher": "DC",
+    "decade": 1980,
+    "characters": 1621
+  },
+  {
+    "publisher": "DC",
+    "decade": 1990,
+    "characters": 1808
+  },
+  {
+    "publisher": "DC",
+    "decade": 2000,
+    "characters": 1658
+  },
+  {
+    "publisher": "DC",
+    "decade": 2010,
+    "characters": 440
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1930,
+    "characters": 69
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1940,
+    "characters": 1441
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1950,
+    "characters": 302
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1960,
+    "characters": 1306
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1970,
+    "characters": 2234
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1980,
+    "characters": 2425
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 1990,
+    "characters": 3657
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2000,
+    "characters": 3086
+  },
+  {
+    "publisher": "Marvel",
+    "decade": 2010,
+    "characters": 1041
+  }
+]

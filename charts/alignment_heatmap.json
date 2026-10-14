@@ -1,0 +1,106 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Heroes, Villains and Everything Between",
+    "subtitle": "Share of recorded character alignments by decade",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 220,
+  "data": {
+    "url": "data/alignment_by_decade.json"
+  },
+  "params": [
+    {
+      "name": "publisherChoice",
+      "value": "Marvel",
+      "bind": {
+        "input": "select",
+        "options": ["Marvel", "DC"],
+        "name": "Publisher: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.publisher === publisherChoice"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "characters",
+          "as": "decade_total"
+        }
+      ],
+      "groupby": ["publisher", "decade"]
+    },
+    {
+      "calculate": "datum.characters / datum.decade_total",
+      "as": "share"
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "ordinal",
+      "sort": "ascending",
+      "title": "First Appearance Decade"
+    },
+    "y": {
+      "field": "alignment",
+      "type": "nominal",
+      "title": "Character Alignment"
+    },
+    "color": {
+      "field": "share",
+      "type": "quantitative",
+      "title": "Share of Decade",
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": {
+        "format": ".0%"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "publisher",
+        "title": "Publisher"
+      },
+      {
+        "field": "decade",
+        "title": "Decade"
+      },
+      {
+        "field": "alignment",
+        "title": "Alignment"
+      },
+      {
+        "field": "characters",
+        "title": "Character Entries"
+      },
+      {
+        "field": "share",
+        "title": "Percentage",
+        "format": ".1%"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}
