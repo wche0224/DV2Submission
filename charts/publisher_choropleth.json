@@ -19,49 +19,66 @@
       "feature": "countries"
     }
   },
-  "transform": [
-    {
-      "calculate": "toNumber(datum.id)",
-      "as": "iso_numeric"
-    },
-    {
-      "lookup": "iso_numeric",
-      "from": {
-        "data": {
-          "url": "data/publisher_countries.json"
-        },
-        "key": "iso_numeric",
-        "fields": [
-          "country",
-          "publishers"
-        ]
-      }
-    },
-    {
-      "calculate": "isValid(datum.country) ? datum.country : 'No matching record'",
-      "as": "country_name"
+  
+"transform": [
+  {
+    "calculate": "toNumber(datum.id)",
+    "as": "iso_numeric"
+  },
+  {
+    "lookup": "iso_numeric",
+    "from": {
+      "data": {
+        "url": "data/publisher_countries.json"
+      },
+      "key": "iso_numeric",
+      "fields": ["country", "publishers"]
     }
-  ],
+  },
+  {
+    "calculate": "isValid(datum.country) ? datum.country : 'No matching record'",
+    "as": "country_name"
+  },
+  {
+    "calculate": "isValid(datum.publishers) ? (datum.publishers == 0 ? '0 records' : datum.publishers <= 4 ? '1–4' : datum.publishers <= 9 ? '5–9' : datum.publishers <= 19 ? '10–19' : '20+') : 'No matching record'",
+    "as": "publisher_band"
+  }
+]
+,
   "mark": {
     "type": "geoshape",
-    "stroke": "#FFFFFF",
+    "stroke": "#A0A0A0",
     "strokeWidth": 0.5
   },
   "encoding": {
     "color": {
-      "condition": {
-        "test": "isValid(datum.publishers)",
-        "field": "publishers",
-        "type": "quantitative",
-        "scale": {
-          "scheme": "blues"
-        },
-        "legend": {
-          "title": "Publisher Records"
-        }
-      },
-      "value": "#E5E7EB"
+    "field": "publisher_band",
+    "type": "nominal",
+    "title": "Publisher Records",
+    "scale": {
+      "domain": [
+        "No matching record",
+        "0 records",
+        "1–4",
+        "5–9",
+        "10–19",
+        "20+"
+      ],
+      "range": [
+        "#E2E2E2",
+        "#A8A8A8",
+        "#D6EAF8",
+        "#85C1E9",
+        "#3498DB",
+        "#154360"
+      ]
     },
+    "legend": {
+      "title": "Publisher Records",
+      "orient": "right",
+      "symbolType": "square"
+    }
+  },
     "tooltip": [
       {
         "field": "country_name",
