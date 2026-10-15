@@ -60,3 +60,24 @@ renderChart(
   "map-publisher-symbols",
   "charts/publisher_symbols.json"
 );
+
+
+// Map 3: Hexbin Density Map
+renderChart(
+  "map-publisher-hexbin",
+  "charts/publisher_hexbin.json"
+);
+
+
+// Chart 8: Character Appearance Box Plot
+renderChart(
+  "chart-boxplot",
+  "charts/appearance_boxplot.json"
+);
+
+// Chart 9: Character Appearance Concentration
+renderChart(
+  "chart-concentration",
+  "charts/appearance_concentration.json"
+);
+

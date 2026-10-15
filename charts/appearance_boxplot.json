@@ -1,0 +1,67 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Who Gets the Most Appearances?",
+    "subtitle": "Distribution of recorded appearances by alignment and publisher",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "data/appearance_records.json"
+  },
+  "transform": [
+    {
+      "filter": "indexof(['Good', 'Bad', 'Neutral'], datum.alignment) >= 0"
+    }
+  ],
+  "mark": {
+    "type": "boxplot",
+    "extent": 1.5,
+    "outliers": false,
+    "size": 26
+  },
+  "encoding": {
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Marvel · Good",
+        "Marvel · Bad",
+        "Marvel · Neutral",
+        "DC · Good",
+        "DC · Bad",
+        "DC · Neutral"
+      ]
+    },
+    "x": {
+      "field": "appearances",
+      "type": "quantitative",
+      "title": "Recorded Appearances (Logarithmic Scale)",
+      "scale": {
+        "type": "log"
+      }
+    },
+    "color": {
+      "field": "publisher",
+      "type": "nominal",
+      "title": "Publisher",
+      "scale": {
+        "domain": ["Marvel", "DC"],
+        "range": ["#D32F2F", "#1976D2"]
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

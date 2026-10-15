@@ -1,0 +1,113 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Do a Few Characters Dominate?",
+    "subtitle": "Cumulative share of recorded appearances",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "data/appearance_concentration.json"
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"pct": 0, "share": 0},
+          {"pct": 100, "share": 1}
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "stroke": "#999999",
+        "strokeDash": [5, 5],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "title": "Top Percentage of Characters"
+        },
+        "y": {
+          "field": "share",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 1]
+          },
+          "axis": {
+            "format": ".0%"
+          },
+          "title": "Share of Recorded Appearances"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 70
+        },
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "top_pct",
+          "type": "quantitative",
+          "title": "Top Percentage of Characters"
+        },
+        "y": {
+          "field": "share",
+          "type": "quantitative",
+          "title": "Share of Recorded Appearances",
+          "axis": {
+            "format": ".0%"
+          }
+        },
+        "color": {
+          "field": "publisher",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Marvel", "DC"],
+            "range": ["#D32F2F", "#1976D2"]
+          },
+          "legend": {
+            "title": "Publisher",
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "publisher",
+            "title": "Publisher"
+          },
+          {
+            "field": "top_pct",
+            "title": "Top % of Characters"
+          },
+          {
+            "field": "characters",
+            "title": "Number of Characters"
+          },
+          {
+            "field": "share",
+            "title": "Share of Appearances",
+            "format": ".1%"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

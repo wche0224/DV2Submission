@@ -1,0 +1,83 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Does Comic Publishing Cluster?",
+    "subtitle": "Density of recorded publisher headquarters",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 400,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@3/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E5E7EB",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/publisher_hexbins.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.publishers",
+          "as": "publisher_count"
+        },
+        {
+          "calculate": "datum.properties.locations",
+          "as": "location_count"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "color": {
+          "field": "publisher_count",
+          "type": "quantitative",
+          "title": "Publisher Associations",
+          "scale": {
+            "scheme": "reds"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "publisher_count",
+            "type": "quantitative",
+            "title": "Publisher Associations"
+          },
+          {
+            "field": "location_count",
+            "type": "quantitative",
+            "title": "Headquarters Locations"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
