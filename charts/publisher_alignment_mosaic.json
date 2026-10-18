@@ -1,0 +1,148 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Marvel vs DC: Character Composition",
+    "subtitle": "Publisher size and character alignment, 1930–2014",
+    "anchor": "start",
+    "fontSize": 18
+  },
+  "width": "container",
+  "height": 330,
+  "padding": {
+    "top": 26,
+    "left": 10,
+    "right": 10,
+    "bottom": 10
+  },
+  "data": {
+    "url": "data/publisher_alignment_mosaic.json"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "title": "Share of All Recorded Character Entries",
+          "scale": {
+            "domain": [0, 1]
+          },
+          "axis": {
+            "format": ".0%",
+            "values": [0, 0.25, 0.5, 0.75, 1]
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "title": "Share Within Publisher",
+          "scale": {
+            "domain": [0, 1]
+          },
+          "axis": {
+            "format": ".0%",
+            "values": [0, 0.25, 0.5, 0.75, 1]
+          }
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "alignment",
+          "type": "nominal",
+          "title": "Character Alignment",
+          "scale": {
+            "domain": [
+              "Good",
+              "Bad",
+              "Neutral",
+              "Other / unknown"
+            ],
+            "range": [
+              "#009E73",
+              "#CC79A7",
+              "#6B7280",
+              "#E69F00"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "publisher",
+            "title": "Publisher"
+          },
+          {
+            "field": "alignment",
+            "title": "Alignment"
+          },
+          {
+            "field": "characters",
+            "type": "quantitative",
+            "title": "Character Entries",
+            "format": ",d"
+          },
+          {
+            "field": "within_publisher_share",
+            "type": "quantitative",
+            "title": "Within Publisher",
+            "format": ".1%"
+          },
+          {
+            "field": "overall_share",
+            "type": "quantitative",
+            "title": "Of Combined Total",
+            "format": ".1%"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.alignment === 'Good'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "color": "#1F2937"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid_x",
+          "type": "quantitative"
+        },
+        "y": {
+          "value": -12
+        },
+        "text": {
+          "field": "publisher",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}

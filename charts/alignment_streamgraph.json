@@ -53,15 +53,28 @@
       "stack": "center",
       "axis": null
     },
-    "color": {
-      "field": "alignment",
-      "type": "nominal",
-      "title": "Alignment",
-      "scale": {
-        "domain": ["Good", "Bad", "Neutral"],
-        "range": ["#219E78", "#DC3545", "#78909C"]
-      }
+    
+  "color": {
+    "field": "alignment",
+    "type": "nominal",
+    "title": "Character Alignment",
+    "scale": {
+      "domain": [
+        "Good",
+        "Bad",
+        "Neutral"
+      ],
+      "range": [
+        "#009E73",
+        "#CC79A7",
+        "#6B7280"
+      ]
     },
+    "legend": {
+      "orient": "top",
+      "title": null
+    }
+  },
     "tooltip": [
       {
         "field": "decade",

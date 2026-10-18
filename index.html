@@ -36,6 +36,9 @@
       </p>
 
       <div id="chart-debuts" class="chart"></div>
+      <p id="debuts-insight" class="insight-note">
+        Calculating the largest difference...
+      </p>
     </section>
 
     <section>
@@ -47,6 +50,23 @@
       </p>
 
       <div id="chart-alignment" class="chart"></div>
+      
+      <p id="alignment-insight" class="insight-note">
+        Calculating character alignment insights...
+      </p>
+
+      <p class="chart-note">
+        Darker blue indicates a higher share of
+        character entries within that decade.
+
+        "Unknown" represents characters without
+        a recorded alignment, while 0% means no
+        entries for that category in the decade.
+
+        Source: FiveThirtyEight Comic Characters,
+        historical 2014 dataset.
+      </p>
+
     </section>
 
     
@@ -66,12 +86,71 @@
     class="chart">
   </div>
 
+  
+  <p class="chart-note">
+    <strong>How to read this:</strong>
+    Each coloured band represents a character
+    alignment. Thicker bands indicate more
+    recorded character debuts during that decade.
+
+    The vertical position is decorative because
+    the streamgraph uses a centred baseline.
+
+    Only Good, Bad and Neutral alignments
+    are included.
+  </p>
+
+  <p id="streamgraph-insight" class="insight-note">
+    Calculating character debut trends...
+  </p>
+
   <p class="chart-note">
     Source: FiveThirtyEight Comic Characters
     (historical 2014 dataset).
     Excludes unknown and other alignments.
   </p>
 </section>
+
+
+<!-- Chart 10: Marimekko Chart -->
+<section>
+  <h2>How Different Are Marvel and DC's Characters?</h2>
+
+  <p>
+    Marvel and DC differ in both their
+    recorded character counts and alignment
+    composition.
+
+    This mosaic chart compares both
+    dimensions simultaneously.
+  </p>
+
+  <div id="chart-mosaic" class="chart"></div>
+
+  <p id="mosaic-insight" class="insight-note">
+    Calculating character composition...
+  </p>
+
+  <p class="chart-note">
+    <strong>How to read this:</strong>
+    Wider columns represent larger shares
+    of all recorded character entries.
+
+    Each coloured segment shows the
+    proportion of that publisher's characters
+    belonging to an alignment category.
+
+    Rectangle area represents its share
+    of the combined character entries.
+
+    Source: FiveThirtyEight Comic Characters,
+    historical dataset through 2014.
+    Other or missing alignments are grouped
+    under Other / unknown.
+  </p>
+</section>
+
+
 
 <!-- Chart 4: Character Ranking -->
 <section>
@@ -88,12 +167,22 @@
     class="chart">
   </div>
 
-  <p class="chart-note">
-    Appearance counts reflect the historical
-    source dataset, not current totals.
+  <p id="ranking-insight" class="insight-note">
+    Calculating the leading characters...
   </p>
-</section>
 
+  
+  <p class="chart-note">
+    <strong>How to read this:</strong>
+    Longer lines indicate more recorded character
+    appearances. The largest point highlights
+    the leading character for the selected
+    publisher.
+
+    Source: FiveThirtyEight Comic Characters.
+    Counts reflect the historical 2014 dataset,
+    not current comic publication totals.
+  </p>
 
 <!-- Section: Geography -->
 <section>
@@ -112,13 +201,26 @@
     class="chart">
   </div>
 
+  <p id="choropleth-insight" class="insight-note">
+    Calculating geographical insights...
+  </p>  
+
+ 
   <p class="chart-note">
-    Source: Wikidata, Grand Comics Database
-    publisher identifiers, and Natural Earth.
-    Retrieved October 2026.
-    Counts represent matching database records,
-    not the total number of publishers.
-    Grey countries have no matching records.
+    <strong>How to read this:</strong>
+    Darker purple represents more recorded
+    comic publishers within a country.
+
+    Grey indicates no matching Wikidata records,
+    not necessarily zero comic publishers.
+
+    <strong>Sources:</strong>
+    Wikidata, Grand Comics Database publisher
+    identifiers, and Natural Earth boundaries.
+
+    Counts reflect available database records,
+    not the total number of publishers
+    or comics published.
   </p>
 </section>
 
@@ -144,12 +246,28 @@
     class="chart">
   </div>
 
+  
+  <p id="symbol-map-insight" class="insight-note">
+    Calculating headquarters insights...
+  </p>
+
   <p class="chart-note">
-    Source: Wikidata and Natural Earth.
-    Circle sizes represent matching publisher
-    records, not the total number of publishers
-    operating in a city. Headquarters records
-    may include historical locations.
+    <strong>How to read this:</strong>
+    Each circle represents a recorded
+    publisher headquarters location.
+
+    Larger circles indicate more publisher
+    records associated with that location.
+
+    Circle area is proportional to the count.
+    Transparency helps reveal overlapping symbols.
+
+    <strong>Sources:</strong> Wikidata and
+    Natural Earth.
+
+    Only publishers with available headquarters
+    coordinates are included. Missing locations
+    do not indicate an absence of publishers.
   </p>
 
 </section>
@@ -160,14 +278,16 @@
   <h2>Where Does Comic Publishing Cluster?</h2>
 
   <p>
-    Comic publisher headquarters are not
-    evenly distributed geographically.
+    While the previous map shows individual
+    headquarters locations, this map reveals
+    broader geographical concentration.
 
-    This map groups recorded headquarters
-    into equal-area hexagonal regions.
+    Nearby locations are grouped into
+    equal-area hexagonal regions.
 
-    Darker regions contain more recorded
-    publisher-headquarters associations.
+    Darker purple indicates more recorded
+    publisher-headquarters associations
+    within a region.
   </p>
 
   <div
@@ -175,12 +295,27 @@
     class="chart">
   </div>
 
+  <p id="hexbin-insight" class="insight-note">
+    Calculating geographical concentration...
+  </p>
+
   <p class="chart-note">
-    Source: Wikidata and Natural Earth.
-    Hexagons represent approximately equal-area
-    regions, each based on a 500 km grid radius.
-    Missing locations are not included.
-    Counts do not represent total industry activity.
+    <strong>How to read this:</strong>
+    Each hexagon groups nearby headquarters
+    locations using an equal-area projection.
+
+    Darker colours indicate higher counts
+    of recorded publisher-headquarters associations.
+
+    The underlying grid has an approximately
+    500 km centre-to-corner hexagon radius
+    in the projected coordinate system.
+
+    <strong>Sources:</strong> Wikidata and Natural Earth.
+
+    Only locations with available coordinates
+    are included. Missing records do not
+    indicate an absence of comic publishers.
   </p>
 </section>
 
@@ -198,20 +333,89 @@
 
   <div id="chart-boxplot" class="chart"></div>
 
+  <p id="boxplot-insight" class="insight-note">
+    Calculating character appearance insights...
+  </p>
+
+  
   <p class="chart-note">
+    <strong>How to read this:</strong>
+    The line inside each box represents
+    the median number of appearances.
+
+    The box contains the middle 50%
+    of character appearance counts.
+
+    Whiskers extend to values within
+    1.5 times the interquartile range.
+    Individual outlier points are hidden
+    for visual clarity.
+
+    <strong>Logarithmic scale:</strong>
+    Equal horizontal distances represent
+    tenfold increases in appearances.
+
+    <strong>Source:</strong>
+    FiveThirtyEight Comic Characters,
+    historical 2014 dataset.
+
+    Only known positive appearance counts
+    for Good, Bad and Neutral characters
+    are included.
+  </p>
+</section>
+
+
+<!-- Chart 11: Ridgeline Distribution -->
+<section>
+  <h2>Are Most Comic Characters Rarely Seen?</h2>
+
+  <p>
+    Some comic characters appear thousands of
+    times, while others appear only once.
+
+    These ridgeline distributions show how
+    character appearances vary across
+    Marvel, DC and different alignments.
+  </p>
+
+  <div
+    id="chart-ridgeline"
+    class="chart">
+  </div>
+
+  <p
+    id="ridgeline-insight"
+    class="insight-note">
+    Calculating appearance patterns...
+  </p>
+
+  <p class="chart-note">
+    <strong>How to read this:</strong>
+    Each ridge represents one character group.
+
+    Taller parts indicate a greater
+    relative concentration of characters
+    at that appearance count.
+
+    The horizontal axis uses a
+    logarithmic scale.
+
+    Curves are smoothed estimates,
+    not exact frequency counts.
+    Each group has a normalised density,
+    so ridge size does not represent
+    the total number of characters.
+
     Source: FiveThirtyEight Comic Characters,
     historical 2014 dataset.
 
-    The horizontal axis uses a logarithmic
-    scale. Each tenfold increase is shown
-    using equal spacing.
-
-    Only characters with known, positive
-    appearance counts and Good, Bad or
-    Neutral alignment are included.
-    Outlier points are hidden.
+    Only Good, Bad and Neutral characters
+    with known positive appearances
+    are included.
   </p>
 </section>
+
 
 <!-- Chart 9: Appearance Concentration -->
 <section>
@@ -232,15 +436,41 @@
     class="chart">
   </div>
 
+  <p id="concentration-insight" class="insight-note">
+    Calculating character concentration...
+  </p>
+
+  
   <p class="chart-note">
-    Source: FiveThirtyEight Comic Characters,
+    <strong>How to read this:</strong>
+    Characters are ranked from most to
+    least recorded appearances.
+
+    The horizontal axis shows the top
+    percentage of characters included.
+
+    The vertical axis shows their
+    combined share of recorded appearances.
+
+    A steeper initial rise indicates
+    greater concentration among leading characters.
+
+    The dashed grey diagonal represents
+    a hypothetical equal distribution.
+
+    The vertical reference highlights
+    the top 10% of characters.
+
+    <strong>Source:</strong>
+    FiveThirtyEight Comic Characters,
     historical 2014 dataset.
 
-    Includes records with positive,
-    known appearance counts.
-    The dashed line represents an
-    equal distribution.
+    Only characters with known positive
+    appearance counts are included.
+    Percentage groups are rounded up
+    to whole character counts.
   </p>
+
 </section>
 
   </main>

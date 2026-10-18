@@ -5,7 +5,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 57,
-        "locations": 19
+        "locations": 19,
+        "example_cities": "195 Broadway, Derby, Equitable Building"
       },
       "geometry": {
         "type": "Polygon",
@@ -47,7 +48,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 29,
-        "locations": 14
+        "locations": 14,
+        "example_cities": "15th arrondissement of Paris, Amsterdam, Boulogne-Billancourt"
       },
       "geometry": {
         "type": "Polygon",
@@ -89,7 +91,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 19,
-        "locations": 12
+        "locations": 12,
+        "example_cities": "Battle Creek, Chicago, Downers Grove"
       },
       "geometry": {
         "type": "Polygon",
@@ -131,7 +134,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 13,
-        "locations": 8
+        "locations": 8,
+        "example_cities": "Cleveland, Hudson, New York"
       },
       "geometry": {
         "type": "Polygon",
@@ -173,7 +177,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 18,
-        "locations": 12
+        "locations": 12,
+        "example_cities": "Berkeley, Burbank, Concord"
       },
       "geometry": {
         "type": "Polygon",
@@ -215,7 +220,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 3,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Mexico City"
       },
       "geometry": {
         "type": "Polygon",
@@ -257,7 +263,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 7,
-        "locations": 5
+        "locations": 5,
+        "example_cities": "Boston, Cambridge, Montreal"
       },
       "geometry": {
         "type": "Polygon",
@@ -299,7 +306,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 14,
-        "locations": 10
+        "locations": 10,
+        "example_cities": "Bielefeld, Cologne, Hamburg"
       },
       "geometry": {
         "type": "Polygon",
@@ -341,7 +349,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 2,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Taipei"
       },
       "geometry": {
         "type": "Polygon",
@@ -383,7 +392,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 6,
-        "locations": 5
+        "locations": 5,
+        "example_cities": "Barcelona, Milan, Monaco"
       },
       "geometry": {
         "type": "Polygon",
@@ -425,7 +435,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 3,
-        "locations": 2
+        "locations": 2,
+        "example_cities": "Kamppi, Stockholm"
       },
       "geometry": {
         "type": "Polygon",
@@ -467,7 +478,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 4,
-        "locations": 4
+        "locations": 4,
+        "example_cities": "Gardena, Laguna Beach, Long Beach"
       },
       "geometry": {
         "type": "Polygon",
@@ -509,7 +521,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 4,
-        "locations": 4
+        "locations": 4,
+        "example_cities": "Madeira Park, Pender Harbour, Seattle"
       },
       "geometry": {
         "type": "Polygon",
@@ -551,7 +564,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 3,
-        "locations": 3
+        "locations": 3,
+        "example_cities": "Bethany, Norman, United States"
       },
       "geometry": {
         "type": "Polygon",
@@ -593,7 +607,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 10,
-        "locations": 10
+        "locations": 10,
+        "example_cities": "Arlington County, Baltimore, Jefferson"
       },
       "geometry": {
         "type": "Polygon",
@@ -635,7 +650,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 2,
-        "locations": 2
+        "locations": 2,
+        "example_cities": "Bilbao, Cenon"
       },
       "geometry": {
         "type": "Polygon",
@@ -677,7 +693,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Porto Alegre"
       },
       "geometry": {
         "type": "Polygon",
@@ -719,7 +736,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Kelburn"
       },
       "geometry": {
         "type": "Polygon",
@@ -761,7 +779,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Tucson"
       },
       "geometry": {
         "type": "Polygon",
@@ -803,7 +822,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Warsaw"
       },
       "geometry": {
         "type": "Polygon",
@@ -845,7 +865,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Valencia"
       },
       "geometry": {
         "type": "Polygon",
@@ -887,7 +908,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "San Antonio"
       },
       "geometry": {
         "type": "Polygon",
@@ -929,7 +951,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Nova Igua\u00e7u"
       },
       "geometry": {
         "type": "Polygon",
@@ -971,7 +994,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 6,
-        "locations": 6
+        "locations": 6,
+        "example_cities": "Hitotsubashi, Kanda-Misakich\u014d, Otowa"
       },
       "geometry": {
         "type": "Polygon",
@@ -1013,7 +1037,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 2,
-        "locations": 2
+        "locations": 2,
+        "example_cities": "Marietta, Orlando"
       },
       "geometry": {
         "type": "Polygon",
@@ -1055,7 +1080,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 4,
-        "locations": 4
+        "locations": 4,
+        "example_cities": "Champaign, Corinth, Sparta"
       },
       "geometry": {
         "type": "Polygon",
@@ -1097,7 +1123,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Central Jakarta"
       },
       "geometry": {
         "type": "Polygon",
@@ -1139,7 +1166,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "NRK Marienlyst"
       },
       "geometry": {
         "type": "Polygon",
@@ -1181,7 +1209,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Winnipeg"
       },
       "geometry": {
         "type": "Polygon",
@@ -1223,7 +1252,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 2,
-        "locations": 2
+        "locations": 2,
+        "example_cities": "Milwaukie, Portland"
       },
       "geometry": {
         "type": "Polygon",
@@ -1265,7 +1295,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Miami"
       },
       "geometry": {
         "type": "Polygon",
@@ -1307,7 +1338,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 4,
-        "locations": 4
+        "locations": 4,
+        "example_cities": "Florence, Gornji Milanovac, Modena"
       },
       "geometry": {
         "type": "Polygon",
@@ -1349,7 +1381,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Claremorris"
       },
       "geometry": {
         "type": "Polygon",
@@ -1391,7 +1424,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Santiago de Cuba"
       },
       "geometry": {
         "type": "Polygon",
@@ -1433,7 +1467,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Missoula"
       },
       "geometry": {
         "type": "Polygon",
@@ -1475,7 +1510,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 2,
-        "locations": 2
+        "locations": 2,
+        "example_cities": "Jackson, New Orleans"
       },
       "geometry": {
         "type": "Polygon",
@@ -1517,7 +1553,8 @@
       "type": "Feature",
       "properties": {
         "publishers": 1,
-        "locations": 1
+        "locations": 1,
+        "example_cities": "Petaling Jaya"
       },
       "geometry": {
         "type": "Polygon",

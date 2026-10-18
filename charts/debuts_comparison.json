@@ -12,6 +12,7 @@
   "data": {
     "url": "data/debuts_by_decade.json"
   },
+  
   "transform": [
     {
       "pivot": "publisher",
@@ -21,6 +22,19 @@
     },
     {
       "filter": "isValid(datum.Marvel) && isValid(datum.DC)"
+    },
+    {
+      "calculate": "abs(datum.Marvel - datum.DC)",
+      "as": "difference"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "difference",
+          "as": "max_difference"
+        }
+      ]
     }
   ],
   "layer": [
@@ -28,7 +42,7 @@
       "mark": {
         "type": "rule",
         "strokeWidth": 3,
-        "color": "#AAAAAA"
+        "color": "#666666"
       },
       "encoding": {
         "y": {
@@ -44,6 +58,14 @@
         },
         "x2": {
           "field": "DC"
+        },
+        
+        "opacity": {
+          "condition": {
+            "test": "datum.difference === datum.max_difference",
+            "value": 1
+          },
+          "value": 0.25
         }
       }
     },
@@ -75,7 +97,8 @@
           "type": "nominal",
           "scale": {
             "domain": ["Marvel", "DC"],
-            "range": ["#D32F2F", "#1976D2"]
+            "range": ["#D55E00", "#0072B2"]
+
           },
           "legend": {
             "title": "Publisher",

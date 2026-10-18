@@ -44,6 +44,10 @@
         {
           "calculate": "datum.properties.locations",
           "as": "location_count"
+        },
+        {
+          "calculate": "datum.properties.example_cities",
+          "as": "example_cities"
         }
       ],
       "mark": {
@@ -57,7 +61,15 @@
           "type": "quantitative",
           "title": "Publisher Associations",
           "scale": {
-            "scheme": "reds"
+            "scheme": "purples",
+            "domainMin": 0
+          },
+          "legend": {
+            "title": "Publisher Associations",
+            "orient": "right",
+            "gradientLength": 180,
+            "labelFontSize": 12,
+            "titleFontSize": 13
           }
         },
         "tooltip": [
@@ -70,6 +82,11 @@
             "field": "location_count",
             "type": "quantitative",
             "title": "Headquarters Locations"
+          },
+          {
+            "field": "example_cities",
+            "type": "nominal",
+            "title": "Example Locations"
           }
         ]
       }

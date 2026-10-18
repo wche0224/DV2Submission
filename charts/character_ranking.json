@@ -2,8 +2,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Who Dominates the Comic Pages?",
-    "subtitle": "Top 15 characters by recorded appearances",
+    "text": "Comic Characters with the Most Appearances",
+    "subtitle": "Top 15 recorded characters per publisher · historical dataset",
     "anchor": "start",
     "fontSize": 18
   },
@@ -58,7 +58,11 @@
         "order": "descending"
       },
       "axis": {
-        "labelLimit": 220
+        "labelLimit": 260,
+        "labelFontSize": 12,
+        "labelPadding": 8,
+        "ticks": false,
+        "domain": false
       }
     },
     "x": {
@@ -87,7 +91,8 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 130
+        "stroke": "#263238",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "color": {
@@ -95,7 +100,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Marvel", "DC"],
-            "range": ["#D32F2F", "#1976D2"]
+            "range": ["#D55E00", "#0072B2"]
           },
           "legend": null
         },
@@ -117,7 +122,22 @@
             "field": "rank",
             "title": "Rank"
           }
-        ]
+        ],
+        
+        "size": {
+          "condition": {
+            "test": "datum.rank === 1",
+            "value": 260
+          },
+          "value": 110
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.rank === 1",
+            "value": 1
+          },
+          "value": 0.75
+        }
       }
     }
   ],

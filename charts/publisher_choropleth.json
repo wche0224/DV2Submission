@@ -32,19 +32,25 @@
         "url": "data/publisher_countries.json"
       },
       "key": "iso_numeric",
-      "fields": ["country", "publishers"]
+      "fields": [
+        "country",
+        "publishers"
+      ]
     }
   },
   {
-    "calculate": "isValid(datum.country) ? datum.country : 'No matching record'",
+    "calculate": "isValid(datum.country) ? datum.country : 'Country name unavailable'",
     "as": "country_name"
   },
   {
-    "calculate": "isValid(datum.publishers) ? (datum.publishers == 0 ? '0 records' : datum.publishers <= 4 ? '1–4' : datum.publishers <= 9 ? '5–9' : datum.publishers <= 19 ? '10–19' : '20+') : 'No matching record'",
+    "calculate": "isValid(datum.publishers) && datum.publishers > 0 ? (datum.publishers <= 4 ? '1–4' : datum.publishers <= 9 ? '5–9' : datum.publishers <= 19 ? '10–19' : '20+') : 'No matching record'",
     "as": "publisher_band"
+  },
+  {
+    "calculate": "isValid(datum.publishers) ? format(datum.publishers, ',d') : 'No matching record'",
+    "as": "publisher_display"
   }
-]
-,
+],
   "mark": {
     "type": "geoshape",
     "stroke": "#A0A0A0",
@@ -52,33 +58,33 @@
   },
   "encoding": {
     "color": {
-    "field": "publisher_band",
-    "type": "nominal",
-    "title": "Publisher Records",
-    "scale": {
-      "domain": [
-        "No matching record",
-        "0 records",
-        "1–4",
-        "5–9",
-        "10–19",
-        "20+"
-      ],
-      "range": [
-        "#E2E2E2",
-        "#A8A8A8",
-        "#D6EAF8",
-        "#85C1E9",
-        "#3498DB",
-        "#154360"
-      ]
+      "field": "publisher_band",
+      "type": "nominal",
+      "title": "Recorded Publishers",
+      "scale": {
+        "domain": [
+          "No matching record",
+          "1–4",
+          "5–9",
+          "10–19",
+          "20+"
+        ],
+        "range": [
+          "#D1D5DB",
+          "#EEE5F5",
+          "#D0B9E3",
+          "#A57BC7",
+          "#693B98"
+        ]
+      },
+      "legend": {
+        "title": "Publisher Records",
+        "orient": "right",
+        "symbolType": "square",
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
     },
-    "legend": {
-      "title": "Publisher Records",
-      "orient": "right",
-      "symbolType": "square"
-    }
-  },
     "tooltip": [
       {
         "field": "country_name",
@@ -86,8 +92,14 @@
         "title": "Country"
       },
       {
-        "field": "publishers",
+        "field": "iso_numeric",
         "type": "quantitative",
+        "title": "Country Code",
+        "format": "d"
+      },
+      {
+        "field": "publisher_display",
+        "type": "nominal",
         "title": "Publisher Records"
       }
     ]

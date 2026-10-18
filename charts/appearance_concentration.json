@@ -3,7 +3,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Do a Few Characters Dominate?",
-    "subtitle": "Cumulative share of recorded appearances",
+    "subtitle": "Cumulative share of recorded character appearances",
     "anchor": "start",
     "fontSize": 18
   },
@@ -16,67 +16,76 @@
     {
       "data": {
         "values": [
-          {"pct": 0, "share": 0},
-          {"pct": 100, "share": 1}
+          {"top_pct": 0, "share": 0},
+          {"top_pct": 100, "share": 1}
         ]
       },
       "mark": {
         "type": "line",
-        "stroke": "#999999",
+        "stroke": "#9CA3AF",
         "strokeDash": [5, 5],
         "strokeWidth": 1.5
       },
       "encoding": {
         "x": {
-          "field": "pct",
+          "field": "top_pct",
           "type": "quantitative",
-          "scale": {
-            "domain": [0, 100]
-          },
+          "scale": {"domain": [0, 100]},
           "title": "Top Percentage of Characters"
         },
         "y": {
           "field": "share",
           "type": "quantitative",
-          "scale": {
-            "domain": [0, 1]
-          },
-          "axis": {
-            "format": ".0%"
-          },
+          "scale": {"domain": [0, 1]},
+          "axis": {"format": ".0%"},
           "title": "Share of Recorded Appearances"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"top_pct": 10}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "stroke": "#636B75",
+        "strokeDash": [4, 4],
+        "strokeWidth": 2,
+        "opacity": 0.65
+      },
+      "encoding": {
+        "x": {
+          "field": "top_pct",
+          "type": "quantitative"
         }
       }
     },
     {
       "mark": {
         "type": "line",
+        "strokeWidth": 3,
         "point": {
           "filled": true,
-          "size": 70
-        },
-        "strokeWidth": 3
+          "size": 50
+        }
       },
       "encoding": {
         "x": {
           "field": "top_pct",
-          "type": "quantitative",
-          "title": "Top Percentage of Characters"
+          "type": "quantitative"
         },
         "y": {
           "field": "share",
-          "type": "quantitative",
-          "title": "Share of Recorded Appearances",
-          "axis": {
-            "format": ".0%"
-          }
+          "type": "quantitative"
         },
         "color": {
           "field": "publisher",
           "type": "nominal",
           "scale": {
             "domain": ["Marvel", "DC"],
-            "range": ["#D32F2F", "#1976D2"]
+            "range": ["#D55E00", "#0072B2"]
           },
           "legend": {
             "title": "Publisher",
@@ -90,7 +99,7 @@
           },
           {
             "field": "top_pct",
-            "title": "Top % of Characters"
+            "title": "Top Characters (%)"
           },
           {
             "field": "characters",
@@ -98,8 +107,56 @@
           },
           {
             "field": "share",
-            "title": "Share of Appearances",
+            "title": "Appearance Share",
             "format": ".1%"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.top_pct === 10"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 220,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "top_pct",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "share",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "publisher",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Marvel", "DC"],
+            "range": ["#D55E00", "#0072B2"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "publisher",
+            "title": "Publisher"
+          },
+          {
+            "field": "share",
+            "title": "Top 10% Appearance Share",
+            "format": ".1%"
+          },
+          {
+            "field": "characters",
+            "title": "Characters Included"
           }
         ]
       }
@@ -108,6 +165,10 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
     }
   }
 }

@@ -23,9 +23,23 @@
       }
     }
   ],
+  
   "transform": [
     {
       "filter": "datum.publisher === publisherChoice"
+    },
+    {
+      "impute": "characters",
+      "key": "alignment",
+      "groupby": ["publisher", "decade"],
+      "keyvals": [
+        "Good",
+        "Bad",
+        "Neutral",
+        "Unknown"
+      ],
+      "method": "value",
+      "value": 0
     },
     {
       "joinaggregate": [
@@ -38,14 +52,14 @@
       "groupby": ["publisher", "decade"]
     },
     {
-      "calculate": "datum.characters / datum.decade_total",
+      "calculate": "datum.decade_total > 0 ? datum.characters / datum.decade_total : null",
       "as": "share"
     }
   ],
   "mark": {
     "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 2
+    "stroke": "#CBD5E1",
+    "strokeWidth": 1
   },
   "encoding": {
     "x": {
@@ -57,19 +71,32 @@
     "y": {
       "field": "alignment",
       "type": "nominal",
-      "title": "Character Alignment"
+      "title": "Character Alignment",
+      "sort": [
+        "Good",
+        "Bad",
+        "Neutral",
+        "Unknown"
+      ]
     },
+    
     "color": {
       "field": "share",
       "type": "quantitative",
-      "title": "Share of Decade",
+      "title": "Share Within Decade",
       "scale": {
-        "scheme": "blues"
+        "domain": [0, 1],
+        "range": [
+          "#E8F3FB",
+          "#084594"
+        ]
       },
       "legend": {
-        "format": ".0%"
+        "format": ".0%",
+        "gradientLength": 180
       }
     },
+    
     "tooltip": [
       {
         "field": "publisher",
@@ -77,7 +104,7 @@
       },
       {
         "field": "decade",
-        "title": "Decade"
+        "title": "First Appearance Decade"
       },
       {
         "field": "alignment",
@@ -85,11 +112,18 @@
       },
       {
         "field": "characters",
+        "type": "quantitative",
         "title": "Character Entries"
       },
       {
+        "field": "decade_total",
+        "type": "quantitative",
+        "title": "Total Entries in Decade"
+      },
+      {
         "field": "share",
-        "title": "Percentage",
+        "type": "quantitative",
+        "title": "Share of Decade",
         "format": ".1%"
       }
     ]

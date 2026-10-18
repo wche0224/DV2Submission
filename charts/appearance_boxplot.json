@@ -21,7 +21,12 @@
     "type": "boxplot",
     "extent": 1.5,
     "outliers": false,
-    "size": 26
+    "size": 28,
+    "median": {
+      "color": "#1F2937",
+      "strokeWidth": 2.5
+    },
+    "ticks": true
   },
   "encoding": {
     "y": {
@@ -35,14 +40,31 @@
         "DC · Good",
         "DC · Bad",
         "DC · Neutral"
-      ]
+      ],
+      "axis": {
+        "labelFontSize": 13,
+        "labelLimit": 200,
+        "labelPadding": 10,
+        "ticks": false,
+        "domain": false
+      }
     },
     "x": {
       "field": "appearances",
       "type": "quantitative",
-      "title": "Recorded Appearances (Logarithmic Scale)",
+      "title": "Recorded Character Appearances (Log Scale)",
       "scale": {
-        "type": "log"
+        "type": "log",
+        "base": 10
+      },
+      "axis": {
+        "values": [1, 10, 100, 1000, 10000],
+        "format": ",d",
+        "grid": true,
+        "gridColor": "#E5E7EB",
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 14
       }
     },
     "color": {
@@ -51,7 +73,7 @@
       "title": "Publisher",
       "scale": {
         "domain": ["Marvel", "DC"],
-        "range": ["#D32F2F", "#1976D2"]
+        "range": ["#D55E00", "#0072B2"]
       }
     }
   },

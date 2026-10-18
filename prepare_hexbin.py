@@ -89,7 +89,10 @@ with open(INPUT_FILE, encoding="utf-8") as f:
     locations = json.load(f)
 
 bins = defaultdict(
-    lambda: {"publishers": 0, "locations": 0}
+    lambda: {
+        "publishers": 0,
+        "locations": 0,
+        "city_names": set()}
 )
 
 for location in locations:
@@ -111,6 +114,11 @@ for location in locations:
     bins[cell]["publishers"] += count
     bins[cell]["locations"] += 1
 
+    city_name = str(location.get("city") or "").strip()
+
+    if city_name:
+        bins[cell]["city_names"].add(city_name) 
+
 features = []
 
 for (q, r), values in bins.items():
@@ -120,7 +128,10 @@ for (q, r), values in bins.items():
         "type": "Feature",
         "properties": {
             "publishers": values["publishers"],
-            "locations": values["locations"]
+            "locations": values["locations"],
+            "example_cities": ", ".join(
+                sorted(values["city_names"])[:3]
+            )
         },
         "geometry": {
             "type": "Polygon",

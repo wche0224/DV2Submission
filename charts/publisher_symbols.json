@@ -32,12 +32,17 @@
       "data": {
         "url": "data/publisher_locations.json"
       },
+      "transform": [
+        {
+          "filter": "isValid(datum.longitude) && isValid(datum.latitude) && datum.publishers > 0"
+        }
+      ],
       "mark": {
         "type": "circle",
-        "color": "#D32F2F",
-        "opacity": 0.7,
+        "color": "#6A3D9A",
+        "opacity": 0.55,
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.8
+        "strokeWidth": 1
       },
       "encoding": {
         "longitude": {
@@ -53,12 +58,19 @@
           "type": "quantitative",
           "title": "Publisher Records",
           "scale": {
-            "type": "sqrt",
-            "range": [80, 1800]
+            "type": "linear",
+            "zero": true,
+            "range": [0, 1200]
           },
           "legend": {
-            "title": "Publishers per Location"
+            "title": "Publishers per Location",
+            "orient": "right"
           }
+        },
+        "order": {
+          "field": "publishers",
+          "type": "quantitative",
+          "sort": "descending"
         },
         "tooltip": [
           {
