@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Marvel vs DC: Character Composition",
     "subtitle": "Publisher size and character alignment, 1930–2014",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 330,
@@ -31,11 +35,20 @@
           "type": "quantitative",
           "title": "Share of All Recorded Character Entries",
           "scale": {
-            "domain": [0, 1]
+            "domain": [
+              0,
+              1
+            ]
           },
           "axis": {
             "format": ".0%",
-            "values": [0, 0.25, 0.5, 0.75, 1]
+            "values": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
           }
         },
         "x2": {
@@ -46,11 +59,20 @@
           "type": "quantitative",
           "title": "Share Within Publisher",
           "scale": {
-            "domain": [0, 1]
+            "domain": [
+              0,
+              1
+            ]
           },
           "axis": {
             "format": ".0%",
-            "values": [0, 0.25, 0.5, 0.75, 1]
+            "values": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
           }
         },
         "y2": {
@@ -141,8 +163,34 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
   }
 }

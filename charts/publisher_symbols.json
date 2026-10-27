@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Where Are Comic Publishers Headquartered?",
     "subtitle": "Recorded publisher headquarters locations in Wikidata",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 400,
@@ -60,7 +64,10 @@
           "scale": {
             "type": "linear",
             "zero": true,
-            "range": [0, 1200]
+            "range": [
+              0,
+              1200
+            ]
           },
           "legend": {
             "title": "Publishers per Location",
@@ -90,6 +97,42 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

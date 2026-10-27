@@ -12,7 +12,7 @@ async function renderChart(elementId, jsonPath) {
     const spec = await response.json();
 
     await vegaEmbed(`#${elementId}`, spec, {
-      actions: true,
+      actions: false,
       renderer: "svg"
     });
 
@@ -159,7 +159,7 @@ async function showDebutInsight() {
         "across all comparable decades.";
     } else {
       element.textContent =
-        `KEY INSIGHT — The ${largest.decade}s ` +
+        ` The ${largest.decade}s ` +
         `show the largest recorded difference. ` +
         `${leader} leads by ` +
         `${formatter.format(largest.difference)} ` +
@@ -233,7 +233,7 @@ async function showAlignmentInsight() {
     }
 
     element.textContent =
-      "KEY INSIGHT — " +
+      " " +
       summaries.join("; ") +
       " of recorded character entries.";
 
@@ -315,7 +315,7 @@ async function showStreamgraphInsight() {
     }
 
     element.textContent = insights.length
-      ? "KEY INSIGHT — " + insights.join(". ") + "."
+      ? " " + insights.join(". ") + "."
       : "No comparable debut records available.";
 
   } catch (error) {
@@ -374,7 +374,7 @@ async function showRankingInsight() {
     }
 
     element.textContent = insights.length
-      ? "KEY INSIGHT — " + insights.join(". ") + "."
+      ? " " + insights.join(". ") + "."
       : "No character rankings available.";
 
   } catch (error) {
@@ -426,7 +426,7 @@ async function showChoroplethInsight() {
     const formatter = new Intl.NumberFormat("en-MY");
 
     element.textContent =
-      `KEY INSIGHT — ${top.country} has the ` +
+      ` ${top.country} has the ` +
       `highest count among ${countries.length} ` +
       `countries with matching Wikidata records, ` +
       `with ${formatter.format(top.publishers)} ` +
@@ -483,7 +483,7 @@ async function showSymbolMapInsight() {
     ).toLocaleString("en-MY");
 
     element.textContent =
-      `KEY INSIGHT — ${top.city} has the highest ` +
+      ` ${top.city} has the highest ` +
       `count among the ${locations.length} ` +
       `recorded headquarters locations, ` +
       `with ${count} publisher associations.`;
@@ -559,7 +559,7 @@ async function showHexbinInsight() {
       : "";
 
     element.textContent =
-      `KEY INSIGHT — A highest-density hexagon ` +
+      ` A highest-density hexagon ` +
       `contains ${topCount.toLocaleString("en-MY")} ` +
       `publisher-headquarters associations, ` +
       `representing ${percentage}% of all ` +
@@ -675,7 +675,7 @@ async function showBoxplotInsight() {
     }
 
     element.textContent = summaries.length
-      ? "KEY INSIGHT — " + summaries.join(". ") + "."
+      ? " " + summaries.join(". ") + "."
       : "No valid appearance data available.";
 
   } catch (error) {
@@ -759,7 +759,7 @@ async function showConcentrationInsight() {
     }
 
     element.textContent =
-      "KEY INSIGHT — The top 10% of recorded " +
+      " The top 10% of recorded " +
       "characters account for " +
       `${percentage.format(marvelShare)} of Marvel ` +
       `appearances and ${percentage.format(dcShare)} ` +
@@ -831,7 +831,7 @@ async function showMosaicInsight() {
         `character entries in this dataset.`;
 
     element.textContent =
-      "KEY INSIGHT — " +
+      " " +
       largerText + " " +
       `Good-aligned characters make up ` +
       `${marvelShare.toFixed(1)}% of Marvel's ` +
@@ -904,7 +904,7 @@ async function showRidgelineInsight() {
     }
 
     element.textContent = summaries.length
-      ? "KEY INSIGHT — " + summaries.join(
+      ? " " + summaries.join(
           ", while "
         ) + "."
       : "No appearance data available.";
@@ -918,3 +918,33 @@ async function showRidgelineInsight() {
 }
 
 showRidgelineInsight();
+
+
+// Hero metrics are calculated from the same JSON used by the charts.
+async function populateHeroMetrics() {
+  try {
+    const paths = [
+      "data/debuts_by_decade.json",
+      "data/publisher_countries.json"
+    ];
+    const responses = await Promise.all(paths.map(path => fetch(path)));
+    if (!responses.every(response => response.ok)) return;
+    const [debutRows, countryRows] = await Promise.all(
+      responses.map(response => response.json())
+    );
+    const characterTotal = debutRows.reduce(
+      (sum, row) => sum + Number(row.characters || 0), 0
+    );
+    const decades = new Set(debutRows.map(row => row.decade)).size;
+    const countries = countryRows.filter(row => Number(row.publishers) > 0).length;
+    document.getElementById("metric-characters").textContent = 
+      characterTotal.toLocaleString("en-MY");
+    document.getElementById("metric-decades").textContent = decades;
+    document.getElementById("metric-countries").textContent = countries;
+  } catch (error) {
+    // Precomputed text in the HTML remains visible if data cannot load.
+    console.warn("Dashboard summary could not be refreshed", error);
+  }
+}
+
+populateHeroMetrics();

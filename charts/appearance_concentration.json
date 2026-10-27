@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Do a Few Characters Dominate?",
     "subtitle": "Cumulative share of recorded character appearances",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 330,
@@ -16,28 +20,49 @@
     {
       "data": {
         "values": [
-          {"top_pct": 0, "share": 0},
-          {"top_pct": 100, "share": 1}
+          {
+            "top_pct": 0,
+            "share": 0
+          },
+          {
+            "top_pct": 100,
+            "share": 1
+          }
         ]
       },
       "mark": {
         "type": "line",
         "stroke": "#9CA3AF",
-        "strokeDash": [5, 5],
+        "strokeDash": [
+          5,
+          5
+        ],
         "strokeWidth": 1.5
       },
       "encoding": {
         "x": {
           "field": "top_pct",
           "type": "quantitative",
-          "scale": {"domain": [0, 100]},
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          },
           "title": "Top Percentage of Characters"
         },
         "y": {
           "field": "share",
           "type": "quantitative",
-          "scale": {"domain": [0, 1]},
-          "axis": {"format": ".0%"},
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": {
+            "format": ".0%"
+          },
           "title": "Share of Recorded Appearances"
         }
       }
@@ -45,13 +70,18 @@
     {
       "data": {
         "values": [
-          {"top_pct": 10}
+          {
+            "top_pct": 10
+          }
         ]
       },
       "mark": {
         "type": "rule",
         "stroke": "#636B75",
-        "strokeDash": [4, 4],
+        "strokeDash": [
+          4,
+          4
+        ],
         "strokeWidth": 2,
         "opacity": 0.65
       },
@@ -84,8 +114,14 @@
           "field": "publisher",
           "type": "nominal",
           "scale": {
-            "domain": ["Marvel", "DC"],
-            "range": ["#D55E00", "#0072B2"]
+            "domain": [
+              "Marvel",
+              "DC"
+            ],
+            "range": [
+              "#D55E00",
+              "#0072B2"
+            ]
           },
           "legend": {
             "title": "Publisher",
@@ -139,8 +175,14 @@
           "field": "publisher",
           "type": "nominal",
           "scale": {
-            "domain": ["Marvel", "DC"],
-            "range": ["#D55E00", "#0072B2"]
+            "domain": [
+              "Marvel",
+              "DC"
+            ],
+            "range": [
+              "#D55E00",
+              "#0072B2"
+            ]
           },
           "legend": null
         },
@@ -167,8 +209,40 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

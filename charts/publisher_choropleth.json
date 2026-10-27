@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Where Are Comic Publishers Recorded?",
     "subtitle": "Publishers identified through Wikidata and the Grand Comics Database",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 360,
@@ -19,38 +23,37 @@
       "feature": "countries"
     }
   },
-  
-"transform": [
-  {
-    "calculate": "toNumber(datum.id)",
-    "as": "iso_numeric"
-  },
-  {
-    "lookup": "iso_numeric",
-    "from": {
-      "data": {
-        "url": "data/publisher_countries.json"
-      },
-      "key": "iso_numeric",
-      "fields": [
-        "country",
-        "publishers"
-      ]
+  "transform": [
+    {
+      "calculate": "toNumber(datum.id)",
+      "as": "iso_numeric"
+    },
+    {
+      "lookup": "iso_numeric",
+      "from": {
+        "data": {
+          "url": "data/publisher_countries.json"
+        },
+        "key": "iso_numeric",
+        "fields": [
+          "country",
+          "publishers"
+        ]
+      }
+    },
+    {
+      "calculate": "isValid(datum.country) ? datum.country : 'Country name unavailable'",
+      "as": "country_name"
+    },
+    {
+      "calculate": "isValid(datum.publishers) && datum.publishers > 0 ? (datum.publishers <= 4 ? '1–4' : datum.publishers <= 9 ? '5–9' : datum.publishers <= 19 ? '10–19' : '20+') : 'No matching record'",
+      "as": "publisher_band"
+    },
+    {
+      "calculate": "isValid(datum.publishers) ? format(datum.publishers, ',d') : 'No matching record'",
+      "as": "publisher_display"
     }
-  },
-  {
-    "calculate": "isValid(datum.country) ? datum.country : 'Country name unavailable'",
-    "as": "country_name"
-  },
-  {
-    "calculate": "isValid(datum.publishers) && datum.publishers > 0 ? (datum.publishers <= 4 ? '1–4' : datum.publishers <= 9 ? '5–9' : datum.publishers <= 19 ? '10–19' : '20+') : 'No matching record'",
-    "as": "publisher_band"
-  },
-  {
-    "calculate": "isValid(datum.publishers) ? format(datum.publishers, ',d') : 'No matching record'",
-    "as": "publisher_display"
-  }
-],
+  ],
   "mark": {
     "type": "geoshape",
     "stroke": "#A0A0A0",
@@ -107,6 +110,42 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

@@ -1,15 +1,19 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Comic Characters with the Most Appearances",
     "subtitle": "Top 15 recorded characters per publisher · historical dataset",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": {
-    "step": 26
+    "step": 28
   },
   "data": {
     "url": "data/top_characters.json"
@@ -20,7 +24,10 @@
       "value": "Marvel",
       "bind": {
         "input": "select",
-        "options": ["Marvel", "DC"],
+        "options": [
+          "Marvel",
+          "DC"
+        ],
         "name": "Publisher: "
       }
     }
@@ -58,7 +65,7 @@
         "order": "descending"
       },
       "axis": {
-        "labelLimit": 260,
+        "labelLimit": 225,
         "labelFontSize": 12,
         "labelPadding": 8,
         "ticks": false,
@@ -71,6 +78,12 @@
       "title": "Recorded Comic Appearances",
       "scale": {
         "zero": true
+      },
+      "axis": {
+        "format": ",d",
+        "tickCount": 6,
+        "labelOverlap": true,
+        "grid": true
       }
     }
   },
@@ -99,8 +112,14 @@
           "field": "publisher",
           "type": "nominal",
           "scale": {
-            "domain": ["Marvel", "DC"],
-            "range": ["#D55E00", "#0072B2"]
+            "domain": [
+              "Marvel",
+              "DC"
+            ],
+            "range": [
+              "#D55E00",
+              "#0072B2"
+            ]
           },
           "legend": null
         },
@@ -123,7 +142,6 @@
             "title": "Rank"
           }
         ],
-        
         "size": {
           "condition": {
             "test": "datum.rank === 1",
@@ -146,8 +164,40 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

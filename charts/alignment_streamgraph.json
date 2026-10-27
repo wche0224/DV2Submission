@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "The Rise of Heroes and Villains",
     "subtitle": "Character debuts by alignment, 1930–2014",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 320,
@@ -18,7 +22,10 @@
       "value": "Marvel",
       "bind": {
         "input": "select",
-        "options": ["Marvel", "DC"],
+        "options": [
+          "Marvel",
+          "DC"
+        ],
         "name": "Publisher: "
       }
     }
@@ -53,28 +60,27 @@
       "stack": "center",
       "axis": null
     },
-    
-  "color": {
-    "field": "alignment",
-    "type": "nominal",
-    "title": "Character Alignment",
-    "scale": {
-      "domain": [
-        "Good",
-        "Bad",
-        "Neutral"
-      ],
-      "range": [
-        "#009E73",
-        "#CC79A7",
-        "#6B7280"
-      ]
+    "color": {
+      "field": "alignment",
+      "type": "nominal",
+      "title": "Character Alignment",
+      "scale": {
+        "domain": [
+          "Good",
+          "Bad",
+          "Neutral"
+        ],
+        "range": [
+          "#009E73",
+          "#CC79A7",
+          "#6B7280"
+        ]
+      },
+      "legend": {
+        "orient": "top",
+        "title": null
+      }
     },
-    "legend": {
-      "orient": "top",
-      "title": null
-    }
-  },
     "tooltip": [
       {
         "field": "decade",
@@ -97,8 +103,40 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

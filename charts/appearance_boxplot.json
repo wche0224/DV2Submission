@@ -1,11 +1,15 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Who Gets the Most Appearances?",
     "subtitle": "Distribution of recorded appearances by alignment and publisher",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 300,
@@ -58,7 +62,13 @@
         "base": 10
       },
       "axis": {
-        "values": [1, 10, 100, 1000, 10000],
+        "values": [
+          1,
+          10,
+          100,
+          1000,
+          10000
+        ],
         "format": ",d",
         "grid": true,
         "gridColor": "#E5E7EB",
@@ -72,8 +82,14 @@
       "type": "nominal",
       "title": "Publisher",
       "scale": {
-        "domain": ["Marvel", "DC"],
-        "range": ["#D55E00", "#0072B2"]
+        "domain": [
+          "Marvel",
+          "DC"
+        ],
+        "range": [
+          "#D55E00",
+          "#0072B2"
+        ]
       }
     }
   },
@@ -82,8 +98,40 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

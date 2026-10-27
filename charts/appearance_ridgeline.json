@@ -1,14 +1,18 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Are Most Comic Characters Rarely Seen?",
     "subtitle": "Appearance distributions by publisher and character alignment",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
-  "height": 420,
+  "height": 400,
   "data": {
     "url": "data/appearance_ridgeline.json"
   },
@@ -29,7 +33,14 @@
         "zero": false
       },
       "axis": {
-        "values": [0, 1, 2, 3, 4, 5],
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
         "labelExpr": "format(pow(10, datum.value), ',.0f')",
         "labelFontSize": 12,
         "titleFontSize": 13,
@@ -42,11 +53,21 @@
       "type": "quantitative",
       "stack": null,
       "scale": {
-        "domain": [0.7, 7.4]
+        "domain": [
+          0.7,
+          7.4
+        ]
       },
       "axis": {
         "title": null,
-        "values": [1, 2, 3, 4, 5, 6],
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
         "labelExpr": "datum.value == 6 ? 'Marvel · Good' : datum.value == 5 ? 'Marvel · Bad' : datum.value == 4 ? 'Marvel · Neutral' : datum.value == 3 ? 'DC · Good' : datum.value == 2 ? 'DC · Bad' : 'DC · Neutral'",
         "labelFontSize": 12,
         "labelLimit": 170,
@@ -64,8 +85,14 @@
       "type": "nominal",
       "title": "Publisher",
       "scale": {
-        "domain": ["Marvel", "DC"],
-        "range": ["#D55E00", "#0072B2"]
+        "domain": [
+          "Marvel",
+          "DC"
+        ],
+        "range": [
+          "#D55E00",
+          "#0072B2"
+        ]
       },
       "legend": {
         "orient": "top",
@@ -109,6 +136,42 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }

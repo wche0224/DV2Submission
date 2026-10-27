@@ -1,23 +1,28 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Marvel vs DC: Character Debuts",
     "subtitle": "Recorded character entries by first-appearance decade",
     "anchor": "start",
-    "fontSize": 18
+    "fontSize": 17,
+    "font": "Georgia",
+    "color": "#182942",
+    "subtitleFont": "Arial",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64748B"
   },
   "width": "container",
   "height": 360,
   "data": {
     "url": "data/debuts_by_decade.json"
   },
-  
   "transform": [
     {
       "pivot": "publisher",
       "value": "characters",
-      "groupby": ["decade"],
+      "groupby": [
+        "decade"
+      ],
       "op": "sum"
     },
     {
@@ -59,7 +64,6 @@
         "x2": {
           "field": "DC"
         },
-        
         "opacity": {
           "condition": {
             "test": "datum.difference === datum.max_difference",
@@ -72,8 +76,14 @@
     {
       "transform": [
         {
-          "fold": ["Marvel", "DC"],
-          "as": ["publisher", "count"]
+          "fold": [
+            "Marvel",
+            "DC"
+          ],
+          "as": [
+            "publisher",
+            "count"
+          ]
         }
       ],
       "mark": {
@@ -96,9 +106,14 @@
           "field": "publisher",
           "type": "nominal",
           "scale": {
-            "domain": ["Marvel", "DC"],
-            "range": ["#D55E00", "#0072B2"]
-
+            "domain": [
+              "Marvel",
+              "DC"
+            ],
+            "range": [
+              "#D55E00",
+              "#0072B2"
+            ]
           },
           "legend": {
             "title": "Publisher",
@@ -130,8 +145,40 @@
       "stroke": null
     },
     "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "gridColor": "#E7EAF0",
+      "domainColor": "#BCC5D0",
+      "tickColor": "#BCC5D0"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 12,
+      "labelColor": "#334155",
+      "titleColor": "#334155",
+      "symbolSize": 115
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 17,
+      "fontWeight": "bold",
+      "color": "#182942",
+      "subtitleFont": "Arial",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#65748A",
+      "anchor": "start"
     }
+  },
+  "padding": {
+    "top": 6,
+    "right": 12,
+    "bottom": 7,
+    "left": 4
   }
 }
